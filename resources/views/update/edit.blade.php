@@ -24,6 +24,12 @@
     <div class="user-box">
         <input required="imagen" name="image" type="file" value="{{$producto->image}}">
     </div>
+
+    <div class="user-box">
+        <select name="tienda_id" id="">
+                <option value="{{$producto->tienda_id}}">Tienda Id: {{$producto->tienda_id}}</option>
+        </select>
+    </div>
     <button type="submit"> AGREGAR <span></span></button>
     </form>
 
