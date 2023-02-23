@@ -19,7 +19,6 @@ class ProductoController extends Controller
         $tienda = Tienda::all();
         return view('create.createProduct',['tienda'=>$tienda]);
     }
-
     public function store(Request $request){
 
         $request->validate([
