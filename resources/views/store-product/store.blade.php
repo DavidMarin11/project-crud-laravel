@@ -15,6 +15,7 @@
             <h1>{{$tiendas->nombre}}</h1>
             <h3>Fecha de creacion</h3>
             <h3>{{$tiendas->fecha}}</h3>
+            <h3>Agregar Productos</h3>
             <div class="button">
                 <a href="{{route('create-product')}}"><button class="button-one">
                     <span>
