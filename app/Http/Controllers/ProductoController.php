@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use App\Models\Tienda;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -30,15 +31,24 @@ class ProductoController extends Controller
         ]);
 
         $producto = new Producto;
+
         $producto->nombre = $request->nombre;
         $producto->descripcion = $request->descripcion;
         $producto->valor = $request->valor;
         $producto->image = $request->image;
         $producto->tienda_id = $request->tienda_id;
 
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $nombreimage = Str::slug($request->nombre).".".$file->guessExtension();
+            $ruta = public_path("images/image/");
+            $file->move($ruta,$nombreimage);
+            $producto->image = $nombreimage;
+        }
+
         $producto->save();
 
-        return redirect()->route('create-product')->with('success','Producto creada correctamente');
+        return redirect()->route('create-product')->with('success','Producto creado correctamente');
     }
 
     public function edit($id){
@@ -50,6 +60,7 @@ class ProductoController extends Controller
     public function update(Request $request, $id){
 
         $producto = Producto::find($id);
+
         $producto->nombre = $request->nombre;
         $producto->descripcion = $request->descripcion;
         $producto->valor = $request->valor;
@@ -67,5 +78,6 @@ class ProductoController extends Controller
         $producto = Producto::find($id);
         $producto->delete();
         return redirect()->route('product')->with('success','Eliminado con exito');
-}
+    }
+
 }
