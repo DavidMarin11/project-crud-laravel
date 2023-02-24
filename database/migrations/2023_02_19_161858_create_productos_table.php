@@ -18,7 +18,7 @@ class CreateProductosTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->decimal('valor');
-            $table->binary('image');
+            $table->string('image');
 
             $table->foreignId('tienda_id')->nullable()
                     ->constrained('tienda')
