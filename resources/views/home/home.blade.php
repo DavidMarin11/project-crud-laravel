@@ -3,7 +3,7 @@
 @section('content-home')
 
     <div class="container-image">
-        <img src="{{asset('image/compras.jpg')}}" alt="">
+        <img src="{{asset('images/compras.jpg')}}" alt="">
         <h1>BIENVENIDOS</h1>
 
         <div class="button-borders">

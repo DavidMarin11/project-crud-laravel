@@ -2,18 +2,25 @@
 
 @section('content-create')
 
-    <div class="store">
+    <div class="stors">
         <h1>Crear Tienda</h1>
     </div>
 
-    <div class="login-box">
+    <div class="alert-div">
+        @if (session('success'))
+            <h3 class="alerta">{{session('success')}} <a href="{{route('store')}}">Ir a tienda</a></h3>
+        @endif
+    </div>
+
+    <div class="cont">
+    <div class="login-create">
         <form action="{{route('create')}}" method="POST">
             @csrf
-        <div class="user-box">
+        <div class="user-create">
             <input required="nombre" name="nombre" type="text">
             <label>Nombre de la tienda</label>
         </div>
-        <div class="user-box">
+        <div class="user-create">
             <input required="fecha" name="fecha" type="date">
         </div>
 
@@ -21,7 +28,5 @@
 
         </form>
     </div>
-    @if (session('success'))
-        <h3 class="alerta">{{session('success')}}</h3>
-    @endif
+    </div>
 @endsection

@@ -5,7 +5,9 @@
 
             @foreach ($producto as $productos)
             <div class="list-prod">
-                <img src="{{$productos->image}}" alt="{{$productos->image}}">
+
+                <img src="/images/image/{{$productos->image}}" alt="" width="150">
+
                 <h2>Producto: <h3>{{$productos->nombre}}</h3></h2>
                 <h2>Descripcion: <h3>{{$productos->descripcion}}</h3></h2>
                 <h2>Valor: {{$productos->valor}}</h2>
