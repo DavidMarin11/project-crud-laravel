@@ -39,6 +39,8 @@
 
         @yield('content-edit')
 
+        @yield('content-editStore')
+
     </div>
     </body>
 </html>
