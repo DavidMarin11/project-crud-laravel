@@ -32,13 +32,14 @@
         <img src="/images/image/{{$producto->image}}" alt="" width="150">
     </div>
     <div class="user-box">
-        <input required="imagen" name="image" type="text" value="{{$producto->image}}">
+        <input required="imagen" name="image" type="text" value="{{$producto->image}}" readonly>
     </div>
 
     <div class="user-box">
         <select name="tienda_id" id="">
-                <option value="{{$producto->tienda_id}}">Tienda Id: {{$producto->tienda_id}}</option>
-        </select>
+            <option value="{{$producto->tienda_id}}">Tienda: {{$producto->tienda->nombre}}</option>
+    </select>
+
     </div>
     <button type="submit"> Actualizar <span></span></button>
     </form>
