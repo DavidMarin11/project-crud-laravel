@@ -1,7 +1,13 @@
 @extends('index')
 
 @section('content-product')
-<div class="prod">
+
+    <div class="alert-editStore">
+        @if (session('success'))
+            <h3 class="alertas">{{session('success')}}</h3>
+        @endif
+    </div>
+    <div class="prod">
 
             @foreach ($producto as $productos)
             <div class="list-prod">
