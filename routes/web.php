@@ -28,6 +28,10 @@ Route::get('/edit', function () {
     return view('update.edit');
 })->name('edit');
 
+Route::get('/edit-store', function () {
+    return view('update.editStore');
+})->name('edit-store');
+
 
 Route::get('/store', [TiendaController::class,'index'])->name('store');
 
@@ -40,6 +44,10 @@ route::post('/create-product',[ProductoController::class,'store'])->name('create
 route::get('/create-product',[ProductoController::class,'create'])->name('create-product');
 
 route::get('/edit/{id}',[ProductoController::class,'edit'])->name('edit');
+
+route::get('/edit-store/{id}',[TiendaController::class,'edit'])->name('edit-store');
+
+route::put('/update-store/{id}',[TiendaController::class,'update'])->name('update-store');
 
 route::put('/update/{id}',[ProductoController::class,'update'])->name('update');
 
