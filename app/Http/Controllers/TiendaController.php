@@ -28,4 +28,21 @@ class TiendaController extends Controller
 
         return redirect()->route('create')->with('success','Tienda creada correctamente');
     }
+
+    public function edit($id){
+
+        $tienda = Tienda::find($id);
+        return view('update.editStore', compact('tienda'));
+    }
+
+    public function update(Request $request, $id){
+
+        $tienda = Tienda::find($id);
+
+        $tienda->nombre = $request->nombre;
+        $tienda->fecha = $request->fecha;
+        $tienda->save();
+
+        return redirect()->route('store')->with('success','Actualizado con exito');
+    }
 }
