@@ -497,6 +497,11 @@ body{
     margin-top: 50px;
 }
 
+.list-store form {
+    display: flex;
+    justify-content: center;
+}
+
 .list-store h1{
     color: var(--color-secundario);
 }
@@ -754,6 +759,8 @@ body{
     text-decoration: none;
     color: white;
   }
+
+
 
   /*---STYLOS CSS PARA EDITSTORE---*/
 
