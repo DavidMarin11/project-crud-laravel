@@ -754,3 +754,26 @@ body{
     text-decoration: none;
     color: white;
   }
+
+  /*---STYLOS CSS PARA EDITSTORE---*/
+
+  .alert-editStore{
+    display: flex;
+    justify-content: center;
+}
+
+.alertas{
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    background-color: rgb(90, 207, 90);
+    border-radius: 10px;
+    box-shadow: 2px 3px 6px green;
+    text-align: center;
+    margin: 15px;
+}
+
+.alertas a{
+    color: white;
+}
