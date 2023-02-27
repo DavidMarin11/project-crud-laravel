@@ -45,4 +45,15 @@ class TiendaController extends Controller
 
         return redirect()->route('store')->with('success','Actualizado con exito');
     }
+
+    public function destroy($tienda){
+
+        $tienda = Tienda::find($tienda);
+        $tienda -> productos()->each(function($producto){
+            $producto->delete();
+        });
+        $tienda->delete();
+
+        return redirect()->route('store')->with('success','Tienda eliminada');
+    }
 }
