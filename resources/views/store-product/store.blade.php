@@ -1,6 +1,11 @@
 @extends('index')
 
 @section('content-store')
+<div class="alert-editStore">
+    @if (session('success'))
+        <h3 class="alertas">{{session('success')}}</h3>
+    @endif
+</div>
     <div class="list-store">
         @foreach ($tienda as $tiendas)
         <div class="element">
@@ -15,14 +20,16 @@
             <h1>{{$tiendas->nombre}}</h1>
             <h3>Fecha de creacion</h3>
             <h3>{{$tiendas->fecha}}</h3>
-            <h3>Agregar Productos</h3>
             <div class="button">
                 <a href="{{route('create-product')}}"><button class="button-one">
                     <span>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> Agregar
                     </span>
                   </button></a>
+                  <form action="{{route('edit-store',$tiendas->id)}}" method="GET"><button class="button-one">Editar
+                </button></form>
             </div>
+
         </div>
         @endforeach
     </div>
