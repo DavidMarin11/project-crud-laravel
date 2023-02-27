@@ -52,3 +52,5 @@ route::put('/update-store/{id}',[TiendaController::class,'update'])->name('updat
 route::put('/update/{id}',[ProductoController::class,'update'])->name('update');
 
 route::delete('/destroy/{id}',[ProductoController::class,'destroy'])->name('destroy');
+
+route::delete('/destroy-store/{id}',[TiendaController::class,'destroy'])->name('destroy-store');
