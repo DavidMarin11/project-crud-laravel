@@ -19,11 +19,11 @@ class CreateProductosTable extends Migration
             $table->string('descripcion');
             $table->decimal('valor');
             $table->string('image');
+            $table->bigInteger('tienda_id')->unsigned();
 
-            $table->foreignId('tienda_id')->nullable()
-                    ->constrained('tienda')
-                    ->cascadeOnUpdate()
-                    ->nullOnDelete();
+            $table->foreign('tienda_id')->nullable()
+                    ->references('id')
+                    ->on('tiendas');
         });
     }
 
