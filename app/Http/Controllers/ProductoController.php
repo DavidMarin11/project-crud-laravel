@@ -12,8 +12,7 @@ class ProductoController extends Controller
     public function index(){
 
         $producto = Producto::all();
-        $tienda = Tienda::pluck('nombre','id');
-        return view('store-product.product', ['producto' => $producto],['tienda'=>$tienda]);
+        return view('store-product.product', ['producto' => $producto]);
 
     }
 
