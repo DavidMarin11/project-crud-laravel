@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Producto;
 use App\Models\Tienda;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,7 @@ class TiendaController extends Controller
         $tienda = Tienda::all();
         return view('store-product.store', ['tienda' => $tienda]);
     }
+
 
     public function store(Request $request){
         $request->validate([

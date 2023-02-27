@@ -12,7 +12,8 @@ class ProductoController extends Controller
     public function index(){
 
         $producto = Producto::all();
-        return view('store-product.product', ['producto' => $producto]);
+        $tienda = Tienda::pluck('nombre','id');
+        return view('store-product.product', ['producto' => $producto],['tienda'=>$tienda]);
 
     }
 
@@ -54,7 +55,8 @@ class ProductoController extends Controller
     public function edit($id){
 
         $producto = Producto::find($id);
-        return view('update.edit', compact('producto'));
+        $tienda = Tienda::pluck('nombre','id');
+        return view('update.edit', compact('producto', "tienda"));
     }
 
     public function update(Request $request, $id){
