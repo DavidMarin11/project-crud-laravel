@@ -21,9 +21,7 @@ class CreateProductosTable extends Migration
             $table->string('image');
             $table->bigInteger('tienda_id')->unsigned();
 
-            $table->foreign('tienda_id')->nullable()
-                    ->references('id')
-                    ->on('tiendas');
+            $table->foreign('tienda_id')->references('id')->on('tiendas');
         });
     }
 
