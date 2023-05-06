@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\TiendaController;
+use App\Http\Controllers\VerProductosController;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -32,7 +34,6 @@ Route::get('/edit-store', function () {
     return view('update.editStore');
 })->name('edit-store');
 
-
 Route::get('/store', [TiendaController::class,'index'])->name('store');
 
 Route::get('/product', [ProductoController::class,'index'])->name('product');
@@ -54,3 +55,5 @@ route::put('/update/{id}',[ProductoController::class,'update'])->name('update');
 route::delete('/destroy/{id}',[ProductoController::class,'destroy'])->name('destroy');
 
 route::delete('/destroy-store/{id}',[TiendaController::class,'destroy'])->name('destroy-store');
+
+route::get('/ver/{id}',[VerProductosController::class,'todos'])->name('ver');

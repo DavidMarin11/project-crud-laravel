@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
-
+        @yield('css')
         <title>Tienda Virtual</title>
 
     </head>
@@ -40,6 +40,8 @@
         @yield('content-edit')
 
         @yield('content-editStore')
+
+        @yield('ver')
 
     </div>
     </body>
